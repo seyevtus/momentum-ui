@@ -24,8 +24,8 @@ class Tabs extends React.Component {
   };
 
   componentDidMount() {
-    const tabsCount = this.getChildrenElements('TabList');
-    const panelsCount = this.getChildrenElements('TabContent');
+    const tabsCount = this.getChildrenElements('TabList') || this.getChildrenElements('MTabList');
+    const panelsCount = this.getChildrenElements('TabContent') || this.getChildrenElements('MTabContent');
 
     if (tabsCount !== panelsCount) {
       throw new Error(`There should be an equal number of Tabs and TabPanels.
